@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Calculadora 1RM</title>
+        <link rel="stylesheet" href="css/calculadora_1rm.css" type="text/css">
+    </head>
+
+    <body>
+        <form onsubmit="return CalculadoraRM()">
+            <div class="div_calculadora">
+                <p class="titulo_calculadora">Sistema de medida</p>
+                <div  class="input_calculadora">
+                    <input type="radio" name="valordepesolevantado" id="valordepesolevantado_metrico" value="metrico" onclick="CambiarValoresMetrico()" checked><label class="label_sistemademedida">Métrico(kg)</label>
+                </div>
+                <div  class="input_calculadora">
+                    <input type="radio" name="valordepesolevantado" id="valordepesolevantado_imperial" value="imperial" onclick="CambiarValoresImperial()"><label class="label_sistemademedida">Imperial(lbs)</label>
+                </div>
+            </div>
+            <div class="div_calculadora">
+                <p class="titulo_calculadora">Peso <span class="titulo_calculadora" id="medida_peso_levantado">(kg):</span></p>
+                    <input type="number" placeholder="Peso levantado" class="input_calculadora" id="input_pesolevantado" required>
+            </div>
+
+            <div class="div_calculadora">
+                <p class="titulo_calculadora">Nº de repeticiones:</p>
+                    <select id="opcion_repeticiones" class="input_calculadora">
+                        <option value="2" selected>2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+            </div>
+
+            <input type="submit" value="Calcular" id="boton_calculadora_rm">
+        </form>
+
+        <div class="mostrar_resultados">
+            <img src="https://alejandroreyes.net/wp-content/uploads/icono_barradegimnasio.png" class="imagenes_resultado">
+            <span class="titulo_resultado">Tu 1RM aproximado sería de:</span>
+            <span class="titulo_resultado" id="calculo_rm">--</span>
+        </div>
+
+        <script type="text/javascript" src="javascript/calculadora_1rm.js"></script>
+    </body>
+</html>
